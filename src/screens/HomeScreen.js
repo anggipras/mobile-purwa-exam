@@ -36,7 +36,7 @@ const HomeScreen = ({navigation}) => {
     }
 
     const onDetailScreen = (item) => {
-        navigation.navigate('stackroot',{screen: 'detail', params: {restauData: item}})
+        navigation.navigate('detail', {restauData: item})
     }
 
     const onRefreshFlatList = () => {

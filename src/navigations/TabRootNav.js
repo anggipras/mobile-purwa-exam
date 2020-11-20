@@ -1,7 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 
-import HomeScreen from './../screens/HomeScreen'
+import LogoutScreen from './../screens/LogoutScreen'
 import StackRootNav from './../navigations/StackRootNav'
 import { Icon } from 'react-native-elements';
 
@@ -15,10 +15,10 @@ const TabRootNav = () => {
                 tabBarIcon: ({focused, color, size})=> {
                     let iconName;
                     let type;
-                    if (route.name === 'home') {
+                    if (route.name === 'stackroot') {
                         iconName = focused? 'home': 'home';
                         type = 'entypo'
-                    } else if (route.name === 'stackroot') {
+                    } else if (route.name === 'logout') {
                         iconName = focused ? 'local-restaurant' : 'local-restaurant';
                         type = 'material'
                     }
@@ -31,8 +31,8 @@ const TabRootNav = () => {
                 showLabel: false
             }}
         >
-            <TabRoot.Screen name='home' component={HomeScreen} />
             <TabRoot.Screen name='stackroot' component={StackRootNav} />
+            <TabRoot.Screen name='logout' component={LogoutScreen} />
         </TabRoot.Navigator>
     )
 }
